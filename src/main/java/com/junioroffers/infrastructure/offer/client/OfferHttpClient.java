@@ -1,7 +1,7 @@
-package com.junioroffers.infrastracture.offer.client;
+package com.junioroffers.infrastructure.offer.client;
 
-import com.junioroffers.infrastracture.RemoteOfferClient;
-import com.junioroffers.infrastracture.offer.dto.OfferDto;
+import com.junioroffers.infrastructure.RemoteOfferClient;
+import com.junioroffers.infrastructure.offer.dto.OfferDto;
 import lombok.AllArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -26,16 +26,13 @@ public class OfferHttpClient implements RemoteOfferClient {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         final HttpEntity<HttpHeaders> requestEntity = new HttpEntity<>(httpHeaders);
-
         try {
             ResponseEntity<List<OfferDto>> response = restTemplate.exchange(uri, HttpMethod.GET, requestEntity,
-                    new ParameterizedTypeReference<List<OfferDto>>() {
-                    });
+                    new ParameterizedTypeReference<List<OfferDto>>() {});
             final List<OfferDto> body = response.getBody();
             return (body != null) ? body : Collections.emptyList();
         } catch (ResourceAccessException e){
             return Collections.emptyList();
         }
     }
-
 }

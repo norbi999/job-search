@@ -1,4 +1,4 @@
-package com.junioroffers.infrastracture.offer.dto;
+package com.junioroffers.infrastructure.offer.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
