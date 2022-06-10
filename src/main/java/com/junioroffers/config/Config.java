@@ -1,5 +1,6 @@
 package com.junioroffers.config;
 
+import com.junioroffers.infrastructure.RemoteOfferClient;
 import com.junioroffers.infrastructure.offer.client.OfferHttpClient;
 import com.junioroffers.infrastructure.offer.error.RestTemplateResponseErrorHandler;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +31,7 @@ public class Config {
     }
 
     @Bean
-    OfferHttpClient offerHttpClient(RestTemplate restTemplate, @Value("${offer.http.client.config.uri:http://example.com}") String uri) {
+    RemoteOfferClient offerHttpClient(RestTemplate restTemplate, @Value("${offer.http.client.config.uri:http://example.com}") String uri) {
         return new OfferHttpClient(restTemplate, uri);
     }
 }
