@@ -1,7 +1,7 @@
 package com.junioroffers.infrastructure.offer.client;
 
 import com.junioroffers.infrastructure.RemoteOfferClient;
-import com.junioroffers.infrastructure.offer.dto.OfferDto;
+import com.junioroffers.infrastructure.offer.dto.JobOfferDto;
 import lombok.AllArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -22,14 +22,14 @@ public class OfferHttpClient implements RemoteOfferClient {
     private final String uri;
 
     @Override
-    public List<OfferDto> getOffers() {
+    public List<JobOfferDto> getOffers() {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         final HttpEntity<HttpHeaders> requestEntity = new HttpEntity<>(httpHeaders);
         try {
-            ResponseEntity<List<OfferDto>> response = restTemplate.exchange(uri, HttpMethod.GET, requestEntity,
-                    new ParameterizedTypeReference<List<OfferDto>>() {});
-            final List<OfferDto> body = response.getBody();
+            ResponseEntity<List<JobOfferDto>> response = restTemplate.exchange(uri, HttpMethod.GET, requestEntity,
+                    new ParameterizedTypeReference<List<JobOfferDto>>() {});
+            final List<JobOfferDto> body = response.getBody();
             return (body != null) ? body : Collections.emptyList();
         } catch (ResourceAccessException e){
             return Collections.emptyList();

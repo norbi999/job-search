@@ -5,7 +5,7 @@ import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.http.Fault;
 import com.junioroffers.config.OfferHttpClientTestConfig;
 import com.junioroffers.infrastructure.RemoteOfferClient;
-import com.junioroffers.infrastructure.offer.dto.OfferDto;
+import com.junioroffers.infrastructure.offer.dto.JobOfferDto;
 import org.assertj.core.api.BDDAssertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -196,11 +196,11 @@ public class OfferHttpClientIntegrationTest implements SampleOfferDto {
     }
 
 
-    private OfferDto cybersourceSoftwareEngineer() {
+    private JobOfferDto cybersourceSoftwareEngineer() {
         return offerWithParameters("Cybersource", "4k - 8k PLN", "https://nofluffjobs.com/pl/job/software-engineer-mobile-m-f-d-cybersource-poznan-entavdpn", "Software Engineer - Mobile (m/f/d)");
     }
 
-    private OfferDto cdqJuniorDevOpsEngineer() {
+    private JobOfferDto cdqJuniorDevOpsEngineer() {
         return offerWithParameters("CDQ Poland", "8k - 14k PLN", "https://nofluffjobs.com/pl/job/junior-devops-engineer-cdq-poland-wroclaw-gnymtxqd", "Junior DevOps Engineer");
     }
 }

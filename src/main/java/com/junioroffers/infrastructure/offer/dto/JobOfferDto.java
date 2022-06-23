@@ -13,7 +13,7 @@ import lombok.Setter;
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor
-public class OfferDto {
+public class JobOfferDto {
     String title;
     String company;
     String salary;
