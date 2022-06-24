@@ -1,15 +1,15 @@
 package com.junioroffers.infrastructure.offer.client;
 
-import com.junioroffers.infrastructure.offer.dto.OfferDto;
+import com.junioroffers.infrastructure.offer.dto.JobOfferDto;
 
 interface SampleOfferDto {
 
-    default OfferDto emptyOffer() {
-        return new OfferDto();
+    default JobOfferDto emptyOffer() {
+        return new JobOfferDto();
     }
 
-    default OfferDto offerWithParameters(String company, String salary, String url, String position) {
-        return OfferDto.builder()
+    default JobOfferDto offerWithParameters(String company, String salary, String url, String position) {
+        return JobOfferDto.builder()
                 .salary(salary)
                 .company(company)
                 .offerUrl(url)
