@@ -2,11 +2,12 @@ package com.junioroffers.offer.domain;
 
 import com.junioroffers.offer.domain.dto.OfferDto;
 import com.junioroffers.offer.domain.exceptions.OfferNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
+@Service
 public class OfferService {
 
     public List<OfferDto> findAllOffers(){
